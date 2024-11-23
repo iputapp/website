@@ -47,7 +47,7 @@ node = ">=20.18"
 npm = ">=10.9"
 ```
 
-> ![TIP]
+> [!TIP]
 >
 > 詳細は[`.prototools`](./.prototools)を参照する。
 
@@ -57,7 +57,7 @@ npm = ">=10.9"
 
 ```
 
-> ![TIP]
+> [!TIP]
 >
 > 詳細は[`.env.example`](./.env.example)を参照する。
 
