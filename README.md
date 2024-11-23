@@ -34,6 +34,8 @@
 
 イベント告知やそのほかの資料について、データベースの使用はオーバーエンジニアリング気味なため、このレポジトリのフォルダにmarkdownファイルを作り、それをHTMLにパースする構成となる。
 
+![architecture markdown](./docs/images/architecture-markdown.png)
+
 ## Development
 
 1. [必須](#必須)
