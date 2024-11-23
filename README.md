@@ -36,6 +36,10 @@
 
 ![architecture markdown](./docs/images/architecture-markdown.png)
 
+入会申請の通知は[Discord Webhook](https://discord.com/developers/docs/resources/webhook#execute-webhook)を利用する。
+
+![architecture newcomer](./docs/images/architecture-newcomer.png)
+
 ## Development
 
 1. [必須](#必須)
