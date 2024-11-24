@@ -43,7 +43,11 @@
   },
   "[yaml]": {
     "editor.tabSize": 2,
-    "editor.insertSpaces": true,
+    "editor.insertSpaces": true
+  },
+  "[markdown]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
   },
   "eslint.validate": ["typescript", "typescriptreact"],
   "stylelint.validate": ["css", "scss"]
