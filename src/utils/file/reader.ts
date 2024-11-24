@@ -6,7 +6,7 @@ import { join } from "path";
  * @param filePath - 検索対象のファイルパス (相対パス)
  * @returns ファイルの内容
  */
-export function readFileByPath({
+export function readFileContent({
   filePath,
 }: {
   filePath: string;

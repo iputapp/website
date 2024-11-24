@@ -1,11 +1,11 @@
 import { describe, expect, test } from "vitest";
 
 import { MARKDOWN_DIR_PATH, MARKDOWN_FILE_EXTENSION } from "@/constants";
-import { readFileByPath } from "@/utils";
+import { readFileContent } from "@/utils";
 
-describe("readFileByPath", () => {
+describe("readFileContent", () => {
   test("Should read 'test' file content", () => {
-    const content = readFileByPath({
+    const content = readFileContent({
       filePath: `${MARKDOWN_DIR_PATH}/test.${MARKDOWN_FILE_EXTENSION}`,
     });
     expect(content).toBe(
@@ -13,7 +13,7 @@ describe("readFileByPath", () => {
     );
   });
   test("Should return null for non-existing file", () => {
-    const content = readFileByPath({
+    const content = readFileContent({
       filePath: `${MARKDOWN_DIR_PATH}/non-existing.${MARKDOWN_FILE_EXTENSION}`,
     });
     expect(content).toBe(null);
