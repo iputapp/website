@@ -4,13 +4,13 @@ import { extname, join, parse } from "path";
 import type { FileExtension } from "./types";
 
 /**
- * 指定されたディレクトリから特定の拡張子のファイル名を取得する
+ * 全てのファイル名を取得する
  * @param directoryPath - 検索対象のディレクトリパス (相対パス)
  * @param extension - 検索対象の拡張子 (例: `md`, `txt`)
  * @param withExtension - 拡張子を含めたファイル名を取得するかどうか (デフォルト: `false`)
  * @returns ファイル名の配列
  */
-export function getFilesByExtension({
+export function getFilenames({
   directoryPath,
   extension,
   withExtension = false,
