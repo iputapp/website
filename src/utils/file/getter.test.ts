@@ -11,4 +11,12 @@ describe("getFilesByExtension", () => {
     });
     expect(files).toContain("test");
   });
+  test("Should contain 'test.md' file with extension option", () => {
+    const files = getFilesByExtension({
+      directoryPath: MARKDOWN_DIR_PATH,
+      extension: MARKDOWN_FILE_EXTENSION,
+      withExtension: true,
+    });
+    expect(files).toContain("test.md");
+  });
 });
