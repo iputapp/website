@@ -18,7 +18,6 @@
       }
     ],
     "paths": {
-      "~prisma/*": ["./prisma/*"],
       "~assets/*": ["./public/assets/*"],
       "@/*": ["./src/*"]
     }
