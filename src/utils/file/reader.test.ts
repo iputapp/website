@@ -12,4 +12,10 @@ describe("readFileByPath", () => {
       "ファイル名および内容を変更する場合は`@/utils/file/*`のテストも変更すること。\n"
     );
   });
+  test("Should return null for non-existing file", () => {
+    const content = readFileByPath({
+      filePath: `${MARKDOWN_DIR_PATH}/non-existing.${MARKDOWN_FILE_EXTENSION}`,
+    });
+    expect(content).toBe(null);
+  });
 });
