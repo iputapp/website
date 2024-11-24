@@ -19,4 +19,11 @@ describe("getFilenames", () => {
     });
     expect(files).toContain("test.md");
   });
+  test("Should return empty array for non-existing directory", () => {
+    const files = getFilenames({
+      directoryPath: `${MARKDOWN_DIR_PATH}/non-existing`,
+      extension: MARKDOWN_FILE_EXTENSION,
+    });
+    expect(files).toHaveLength(0);
+  });
 });
