@@ -12,6 +12,7 @@ describe("readFileContent", () => {
       "ファイル名および内容を変更する場合は`@/utils/file/*`のテストも変更すること。\n"
     );
   });
+
   it("should return null for non-existing file", () => {
     const content = readFileContent({
       filePath: `${MARKDOWN_DIR_PATH}/non-existing.${MARKDOWN_FILE_EXTENSION}`,
