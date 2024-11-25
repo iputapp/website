@@ -1,13 +1,10 @@
 import { z } from "zod";
 
-const OccupationalStatus = z.enum([
-  "IPUT_TOKYO_STUDENT",
-  "COCOON_TOWER_STUDENT",
-  "STUDENT",
-  "OTHER",
-]);
+import { CONTACT_TOOL, OCCUPATIONAL_STATUS } from "@/constants";
 
-const ContactTool = z.enum(["EMAIL", "DISCORD", "SLACK"]);
+const OccupationalStatus = z.enum(OCCUPATIONAL_STATUS);
+
+const ContactTool = z.enum(CONTACT_TOOL);
 
 export const NewcomerSchema = z
   .object({
