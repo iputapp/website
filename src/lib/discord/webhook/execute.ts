@@ -1,3 +1,4 @@
+import { WebhookError } from "./error";
 import type { WebhookPayload } from "./types";
 
 interface WebhookExecuteOptions {
@@ -34,19 +35,40 @@ export async function executeWebhook({
     webhookUrl.searchParams.append("thread_id", threadId);
   }
 
-  const response = await fetch(webhookUrl.toString(), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+  try {
+    const response = await fetch(webhookUrl.toString(), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
-  if (!response.ok) {
-    throw new Error(
-      `Failed to execute webhook: ${response.status} ${response.statusText}`
+    if (!response.ok) {
+      let errorMessage: string;
+      try {
+        // レスポンスからエラーメッセージをパースする
+        const errorData = await response.json();
+        errorMessage =
+          errorData.message || `HTTP error! status: ${response.status}`;
+      } catch {
+        // パースに失敗した場合は、標準のエラーメッセージを使用する
+        errorMessage = `HTTP error! status: ${response.status}`;
+      }
+      throw new WebhookError(errorMessage, response.status, response);
+    }
+
+    return response;
+  } catch (error) {
+    // WebhookError はそのままスローする
+    if (error instanceof WebhookError) {
+      throw error;
+    }
+    // ネットワークエラーやその他の失敗を処理する
+    throw new WebhookError(
+      error instanceof Error ? error.message : "Failed to execute webhook",
+      undefined,
+      undefined
     );
   }
-
-  return response;
 }
