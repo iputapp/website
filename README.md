@@ -29,7 +29,7 @@
 [cloudflarepages-logo]: https://img.shields.io/badge/-Cloudflare%20Pages-F38020.svg?logo=cloudflarepages&style=flat&logoColor=ffffff
 [cloudflare-logo]: https://img.shields.io/badge/-Cloudflare-F38020.svg?logo=cloudflare&style=flat&logoColor=ffffff
 
-### 他
+### ほか
 
 - [framer-motion](https://www.framer.com/motion)
 - [tailwind-variants](https://www.tailwind-variants.org)
@@ -54,7 +54,7 @@
 
 ### 必須
 
-```conf
+```ini
 node = ">=20.18"
 npm = ">=10.9"
 ```
