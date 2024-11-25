@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { sleep } from "./sleep";
 
-describe("sleep utility", () => {
+describe("sleep", () => {
   it("should resolve after specified time", async () => {
     vi.useFakeTimers();
     const startTime = Date.now();
