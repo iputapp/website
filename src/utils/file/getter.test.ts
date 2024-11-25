@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import { MARKDOWN_DIR_PATH, MARKDOWN_FILE_EXTENSION } from "@/constants";
 
-import { type FileExtension, getFilenames } from "./";
+import { getFilenames } from "./";
+import type { FileExtension } from "./types";
 
 describe("getFilenames", () => {
   const TEST_DIR = MARKDOWN_DIR_PATH;
