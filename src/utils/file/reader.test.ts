@@ -1,22 +1,29 @@
+import { join } from "path";
 import { describe, expect, it } from "vitest";
 
-import { MARKDOWN_DIR_PATH, MARKDOWN_FILE_EXTENSION } from "@/constants";
-import { readFileContent } from "@/utils";
+import { MARKDOWN_DIR_PATH } from "@/constants";
+
+import { readFileContent } from "./";
 
 describe("readFileContent", () => {
-  it("should read 'test' file content", () => {
-    const content = readFileContent({
-      filePath: `${MARKDOWN_DIR_PATH}/test.${MARKDOWN_FILE_EXTENSION}`,
-    });
-    expect(content).toBe(
-      "ファイル名および内容を変更する場合は`@/utils/file/*`のテストも変更すること。\n"
-    );
+  const TEST_FILE_PATH = join(MARKDOWN_DIR_PATH, "test.md");
+  const TEST_INVALID_FILE_PATH = join(MARKDOWN_DIR_PATH, "nonexistent.md");
+  const TEST_FILE_CONTENT =
+    "ファイル名および内容を変更する場合は`@/utils/file/*`のテストも変更すること。\n";
+
+  it("should successfully read file content", () => {
+    const result = readFileContent({ filePath: TEST_FILE_PATH });
+
+    expect(result.success).toBe(true);
+    expect(result.data).toBe(TEST_FILE_CONTENT);
+    expect(result.error).toBeUndefined();
   });
 
-  it("should return null for non-existing file", () => {
-    const content = readFileContent({
-      filePath: `${MARKDOWN_DIR_PATH}/non-existing.${MARKDOWN_FILE_EXTENSION}`,
-    });
-    expect(content).toBe(null);
+  it("should handle non-existent file", () => {
+    const result = readFileContent({ filePath: TEST_INVALID_FILE_PATH });
+
+    expect(result.success).toBe(false);
+    expect(result.data).toBeUndefined();
+    expect(result.error?.message).toContain("Failed to read file");
   });
 });
