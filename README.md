@@ -67,7 +67,7 @@ npm = ">=10.9"
 ### 環境変数
 
 ```ini
-
+DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/{your-webhook-id}/{your-webhook-token}"
 ```
 
 > [!TIP]
