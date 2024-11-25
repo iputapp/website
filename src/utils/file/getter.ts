@@ -1,7 +1,8 @@
 import { readdirSync } from "fs";
 import { extname, join, parse } from "path";
 
-import type { FileExtension } from "./types";
+import { handleFileError } from "./error";
+import type { FileExtension, FileOperationResult } from "./types";
 
 /**
  * 全てのファイル名を取得する
@@ -18,7 +19,7 @@ export function getFilenames({
   directoryPath: string;
   extension?: FileExtension;
   withExtension?: boolean;
-}): string[] {
+}): FileOperationResult<string[]> {
   try {
     const absolutePath = join(process.cwd(), directoryPath);
     // ディレクトリ内のファイル名を全て取得
@@ -44,7 +45,10 @@ export function getFilenames({
     );
     // 拡張子を含めたファイル名を返す
     if (withExtension) {
-      return filteredFiles;
+      return {
+        success: true,
+        data: filteredFiles,
+      };
     }
 
     // 拡張子を除いた文字列に変換
@@ -52,9 +56,16 @@ export function getFilenames({
       (file) => parse(file).name
     );
 
-    return filteredFilesWithoutExtension;
+    return {
+      success: true,
+      data: filteredFilesWithoutExtension,
+    };
   } catch (error) {
-    console.error(`Error reading directory: ${error}`);
-    return [];
+    const fileError = handleFileError(error, "read directory");
+    console.error(fileError);
+    return {
+      success: false,
+      error: fileError,
+    };
   }
 }
