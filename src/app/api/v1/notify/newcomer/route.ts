@@ -6,7 +6,7 @@ import { NewcomerSchema } from "@/models";
 /**
  * API: 入会申請の通知
  *
- * Mock test: test/api/newcomer.test.ts
+ * Mock test: test/api/notify/newcomer.test.ts
  */
 export async function POST(request: NextRequest) {
   try {
