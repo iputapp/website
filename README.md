@@ -4,9 +4,9 @@
 
 ## Tech Stack
 
-| Environments                | Languages                  | Linters                                                                     | Frameworks   | Libraries                                                                                             | Testing                             | CI/CD                 | PaaS                                                            |
-| :-------------------------- | :------------------------- | :-------------------------------------------------------------------------- | :----------- | :---------------------------------------------------------------------------------------------------- | :---------------------------------- | :-------------------- | :-------------------------------------------------------------- |
-| ![node-logo]<br>![npm-logo] | ![ts-logo]<br>![sass-logo] | ![eslint-logo]<br>![stylelint-logo]<br>![prettier-logo]<br>![lefthook-logo] | ![next-logo] | ![react-logo]<br>![tailwind-logo]<br>![next-themes-logo]<br>![swr-logo]<br>![zod-logo]<br>![rhf-logo] | ![vitest-logo]<br>![storybook-logo] | ![githubactions-logo] | ![vercel-logo]<br>![cloudflarepages-logo]<br>![cloudflare-logo] |
+| Environments                | Languages                  | Linters                                                                     | Frameworks   | Libraries                                                                      | Testing                             | CI/CD                 | PaaS                                                            |
+| :-------------------------- | :------------------------- | :-------------------------------------------------------------------------- | :----------- | :----------------------------------------------------------------------------- | :---------------------------------- | :-------------------- | :-------------------------------------------------------------- |
+| ![node-logo]<br>![npm-logo] | ![ts-logo]<br>![sass-logo] | ![eslint-logo]<br>![stylelint-logo]<br>![prettier-logo]<br>![lefthook-logo] | ![next-logo] | ![react-logo]<br>![tailwind-logo]<br>![swr-logo]<br>![zod-logo]<br>![rhf-logo] | ![vitest-logo]<br>![storybook-logo] | ![githubactions-logo] | ![vercel-logo]<br>![cloudflarepages-logo]<br>![cloudflare-logo] |
 
 [node-logo]: https://img.shields.io/badge/-Node.js-5FA04E.svg?logo=nodedotjs&style=flat&logoColor=ffffff
 [npm-logo]: https://img.shields.io/badge/-npm-CB3837.svg?logo=npm&style=flat&logoColor=ffffff
@@ -19,7 +19,6 @@
 [next-logo]: https://img.shields.io/badge/-Next.js-000000.svg?logo=nextdotjs&style=flat&logoColor=ffffff
 [react-logo]: https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=flat&logoColor=000000
 [tailwind-logo]: https://img.shields.io/badge/-Tailwind%20CSS-06B6D4.svg?logo=tailwindcss&style=flat&logoColor=ffffff
-[next-themes-logo]: https://img.shields.io/badge/P-next--themes-000000.svg?logo=&style=flat&logoColor=ffffff&labelColor=000000
 [swr-logo]: https://img.shields.io/badge/-SWR-000000.svg?logo=swr&style=flat&logoColor=ffffff
 [zod-logo]: https://img.shields.io/badge/-Zod-3E67B1.svg?logo=zod&style=flat&logoColor=ffffff
 [rhf-logo]: https://img.shields.io/badge/-React%20Hook%20Form-EC5990.svg?logo=reacthookform&style=flat&logoColor=ffffff
@@ -29,6 +28,13 @@
 [vercel-logo]: https://img.shields.io/badge/-Vercel-000000.svg?logo=vercel&style=flat&logoColor=ffffff
 [cloudflarepages-logo]: https://img.shields.io/badge/-Cloudflare%20Pages-F38020.svg?logo=cloudflarepages&style=flat&logoColor=ffffff
 [cloudflare-logo]: https://img.shields.io/badge/-Cloudflare-F38020.svg?logo=cloudflare&style=flat&logoColor=ffffff
+
+### 他
+
+- [framer-motion](https://www.framer.com/motion)
+- [tailwind-variants](https://www.tailwind-variants.org)
+- [clsx & tailwind-merge](./src/utils/cn.ts)
+- [next-themes](https://github.com/pacocoursey/next-themes)
 
 ## Architecture
 
