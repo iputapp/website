@@ -1,6 +1,11 @@
 import type { NextRequest } from "next/server";
 
-import { handleAPIError, handleAPISuccess } from "@/lib";
+import {
+  CONTACT_TOOL_JA,
+  DISCORD_WEBHOOK_URL,
+  OCCUPATIONAL_STATUS_JA,
+} from "@/constants";
+import { Discord, handleAPIError, handleAPISuccess } from "@/lib";
 import { NewcomerSchema } from "@/models";
 
 /**
@@ -15,7 +20,23 @@ export async function POST(request: NextRequest) {
 
     /**
      * @todo Discord Webhook を実行して申請を通知する
+     * ! 外部から実行されないような対策が必要
+     * ! 本番環境でのみ実行する
      */
+    if (process.env.NODE_ENV === "production") {
+      Discord.Webhook.executeWebhook({
+        url: DISCORD_WEBHOOK_URL,
+        payload: {
+          content: `
+          🔔入会申請🔔
+          **名前**：${validatedData.name}
+          **在籍**：${OCCUPATIONAL_STATUS_JA[validatedData.occupationalStatus]}
+          **連絡手段**：${CONTACT_TOOL_JA[validatedData.contactTool]}
+          **連絡先**：${validatedData.contactDetail}
+        `,
+        },
+      });
+    }
 
     return handleAPISuccess(validatedData);
   } catch (error) {
