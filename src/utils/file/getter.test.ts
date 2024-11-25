@@ -11,6 +11,7 @@ describe("getFilenames", () => {
     });
     expect(files).toContain("test");
   });
+
   it("should contain 'test.md' file with extension option", () => {
     const files = getFilenames({
       directoryPath: MARKDOWN_DIR_PATH,
@@ -19,6 +20,7 @@ describe("getFilenames", () => {
     });
     expect(files).toContain("test.md");
   });
+
   it("should return empty array for non-existing directory", () => {
     const files = getFilenames({
       directoryPath: `${MARKDOWN_DIR_PATH}/non-existing`,
