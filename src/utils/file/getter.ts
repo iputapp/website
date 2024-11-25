@@ -16,7 +16,7 @@ export function getFilenames({
   withExtension = false,
 }: {
   directoryPath: string;
-  extension: FileExtension;
+  extension?: FileExtension;
   withExtension?: boolean;
 }): string[] {
   try {
@@ -27,6 +27,13 @@ export function getFilenames({
       withFileTypes: false,
       recursive: false,
     });
+    // 全てのファイル名を返す
+    if (!extension) {
+      return {
+        success: true,
+        data: files,
+      };
+    }
 
     const extensionWithDot = extension.startsWith(".")
       ? extension
