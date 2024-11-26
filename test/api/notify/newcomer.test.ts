@@ -2,8 +2,8 @@ import { testApiHandler } from "next-test-api-route-handler";
 import { describe, expect, it } from "vitest";
 
 import * as appHandler from "@/app/api/v1/notify/newcomer/route";
-import { createAPIResponse } from "@/lib";
 import type { Newcomer } from "@/models";
+import { createAPIResponse } from "@/server";
 
 describe("POST /api/v1/notify/newcomer", () => {
   it("正常なリクエストを処理できる", async () => {

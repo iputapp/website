@@ -5,8 +5,8 @@ import {
   DISCORD_WEBHOOK_URL,
   OCCUPATIONAL_STATUS_JA,
 } from "@/constants";
-import { Discord, handleAPIError, handleAPISuccess } from "@/lib";
 import { NewcomerSchema } from "@/models";
+import { Discord, handleAPIError, handleAPISuccess } from "@/server";
 
 /**
  * API: 入会申請の通知
