@@ -7,7 +7,7 @@ export interface WebhookPayload {
   username?: string;
   avatar_url?: string;
   tts?: boolean;
-  embeds?: WebhookEmbed[];
+  embeds?: Embed[];
   allowed_mentions?: AllowedMentions;
   components?: MessageComponent[];
   payload_json?: string;
@@ -22,7 +22,7 @@ export interface WebhookPayload {
  * Discord Webhook Embed
  * @see {@link https://discord.com/developers/docs/resources/message#embed-object}
  */
-export interface WebhookEmbed {
+export interface Embed {
   title?: string;
   type?: string;
   description?: string;
@@ -253,7 +253,7 @@ export interface Attachment {
  */
 export interface Poll {
   question: PollMedia;
-  answers: DiscordPollAnswer[];
+  answers: PollAnswer[];
   expiry: string;
   allow_multiselect: boolean;
   /** @see {@link https://discord.com/developers/docs/resources/poll#layout-type} */
@@ -267,7 +267,7 @@ export interface Poll {
  */
 export interface PollCreateRequest {
   question: PollMedia;
-  answers: DiscordPollAnswer[];
+  answers: PollAnswer[];
   duration?: number;
   allow_multiselect?: boolean;
   layout_type?: number;
@@ -280,7 +280,7 @@ export interface PollMedia {
 }
 
 /** @see {@link https://discord.com/developers/docs/resources/poll#poll-answer-object} */
-export interface DiscordPollAnswer {
+export interface PollAnswer {
   answer_id: number;
   poll_media: PollMedia;
 }
