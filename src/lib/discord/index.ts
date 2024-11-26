@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import * as discord from "./webhook";
+import * as webhook from "./webhook";
 
 /**
  * Discord 関連のユーティリティ
@@ -11,5 +11,5 @@ import * as discord from "./webhook";
  * ```
  */
 export namespace Discord {
-  export import Webhook = discord;
+  export import Webhook = webhook;
 }
