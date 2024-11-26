@@ -12,9 +12,9 @@ interface WebhookExecuteOptions {
 
 /**
  * Discord Webhook を実行する
- * @param url Webhook URL
- * @param payload Webhook に送信するデータ
- * @param options Webhook 実行時のオプション
+ * @param url - Webhook URL
+ * @param payload - Webhook に送信するデータ
+ * @param options - Webhook 実行時のオプション
  * @returns
  * @see {@link https://discord.com/developers/docs/resources/webhook#execute-webhook}
  */
