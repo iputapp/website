@@ -64,7 +64,7 @@ export async function executeWebhook({
     if (error instanceof WebhookError) {
       throw error;
     }
-    // ネットワークエラーやその他の失敗を処理する
+    // ネットワークエラーやその他の失敗をスローする
     throw new WebhookError(
       error instanceof Error ? error.message : "Failed to execute webhook",
       undefined,
