@@ -29,10 +29,7 @@ export namespace TokenManager {
     headerToken: string | null;
     formToken: string | undefined;
   }): boolean {
-    if (!formToken) {
-      return false;
-    }
-    if (!cookieToken || !headerToken) {
+    if (!cookieToken || !headerToken || !formToken) {
       return false;
     }
     if (
