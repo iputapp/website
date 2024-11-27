@@ -12,6 +12,7 @@ describe("POST /api/v1/notify/newcomer", () => {
       occupationalStatus: "STUDENT",
       contactTool: "DISCORD",
       contactDetail: "foobar#1234",
+      csrfToken: "csrf-token",
     };
 
     await testApiHandler({
@@ -36,6 +37,7 @@ describe("POST /api/v1/notify/newcomer", () => {
       occupationalStatus: "STUDENT",
       contactTool: "EMAIL",
       contactDetail: "invalid-email",
+      csrfToken: "csrf-token",
     };
 
     await testApiHandler({
@@ -59,6 +61,7 @@ describe("POST /api/v1/notify/newcomer", () => {
       occupationalStatus: "IPUT_TOKYO_STUDENT",
       contactTool: "DISCORD",
       contactDetail: "foobar#1234",
+      csrfToken: "csrf-token",
     };
 
     await testApiHandler({
