@@ -35,6 +35,7 @@
 - [tailwind-variants](https://www.tailwind-variants.org)
 - [clsx & tailwind-merge](./src/utils/cn.ts)
 - [next-themes](https://github.com/pacocoursey/next-themes)
+- [next-test-api-route-handler](https://github.com/Xunnamius/next-test-api-route-handler)
 
 ## Architecture
 
@@ -66,7 +67,10 @@ npm = ">=10.9"
 ### 環境変数
 
 ```ini
-
+HOST_ORIGIN_URL="http://localhost:3000"
+MARKDOWN_DIR_PATH="markdowns"
+DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/{your-webhook-id}/{your-webhook-token}"
+TOKEN_SECRET="{your-secure-secret-key-32-chars!}"
 ```
 
 > [!TIP]
