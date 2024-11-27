@@ -14,11 +14,11 @@ import { setTokenToCookie } from "./server-actions";
 
 /**
  * 申請フォームコンポーネント
- * @param token - 正規リクエスト確認のトークン
+ * @param token - 正規リクエスト検証のトークン
  */
 export function Form({ token }: { token: string }) {
   useLayoutEffect(() => {
-    // 正規リクエスト確認のトークンを Cookie に保存
+    // 正規リクエスト検証のトークンを Cookie に保存
     setTokenToCookie(token);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -61,7 +61,7 @@ export function Form({ token }: { token: string }) {
     resolver: zodResolver(NewcomerSchema),
     mode: "all",
     defaultValues: {
-      csrfToken: token, // 正規リクエスト確認のトークンを設定
+      csrfToken: token, // 正規リクエスト検証のトークンを設定
       name: undefined,
       occupationalStatus: undefined,
       studentId: undefined,
@@ -78,7 +78,7 @@ export function Form({ token }: { token: string }) {
   return (
     <>
       <form className="grid gap-6" onSubmit={handleSubmit(onSubmit)}>
-        {/* 正規リクエスト確認のトークン */}
+        {/* 正規リクエスト検証のトークン */}
         <input type="hidden" readOnly {...register("csrfToken")} />
         {/* 申請フォーム */}
         <section className="grid gap-1">

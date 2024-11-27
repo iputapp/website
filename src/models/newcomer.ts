@@ -13,7 +13,7 @@ export const NewcomerSchema = z
     studentId: z.string().nullish(),
     contactTool: ContactTool,
     contactDetail: z.string().min(1, "メールアドレスまたはユーザ名が必要です"),
-    csrfToken: z.string(), // 正規リクエスト確認のトークン
+    csrfToken: z.string(), // 正規リクエスト検証のトークン
   })
   .refine(
     (data) => {

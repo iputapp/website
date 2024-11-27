@@ -13,7 +13,7 @@ export async function sendApply(url: string, { arg }: { arg: Newcomer }) {
     method: "POST",
     body: JSON.stringify(arg),
     headers: {
-      // 正規リクエスト確認のトークンをヘッダに含める
+      // 正規リクエスト検証のトークンをヘッダに含める
       [API_NOTIFY_NEWCOMER.TOKEN_HEADER_NAME]: arg.csrfToken,
     },
   });

@@ -3,7 +3,7 @@ import { TokenManager } from "@/server";
 import { Form } from "./form";
 
 export default function Page() {
-  // 正規リクエスト確認のトークンを生成
+  // 正規リクエスト検証のトークンを生成
   const token = TokenManager.generate();
 
   return (

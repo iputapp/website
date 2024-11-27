@@ -6,7 +6,7 @@ import { API_NOTIFY_NEWCOMER } from "@/constants";
 import { TokenManager } from "@/server";
 
 /**
- * Cookie に正規リクエスト確認のトークンを保存
+ * Cookie に正規リクエスト検証のトークンを保存
  * @param token - トークン
  */
 export async function setTokenToCookie(token: string): Promise<void> {

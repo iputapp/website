@@ -28,11 +28,11 @@ export async function POST(request: NextRequest) {
     const validatedData = NewcomerSchema.parse(body);
 
     /**
-     * 正規リクエスト確認
+     * 正規リクエスト検証
      * テストではスキップ
      */
     if (process.env.NODE_ENV !== "test") {
-      // 正規リクエスト確認のトークンを取得
+      // 正規リクエスト検証のトークンを取得
       const cookieToken = cookies().get(
         API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME
       )?.value;
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       );
       const formToken = validatedData.csrfToken;
 
-      // 正規リクエスト確認のトークンを Cookie から削除
+      // 正規リクエスト検証のトークンを Cookie から削除
       cookies().delete(API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME);
 
       // 正規リクエスト検証
