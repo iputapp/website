@@ -16,5 +16,3 @@ export const OCCUPATIONAL_STATUS = [
 ] as const;
 
 export const CONTACT_TOOL = ["EMAIL", "DISCORD", "SLACK"] as const;
-
-export const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "";
