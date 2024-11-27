@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 /**
  * APIレスポンス (成功)
  */
-export type APIResponse<T> = {
+export type APISuccessResponse<T> = {
+  type: "success";
   data: T;
   status: number;
 };
@@ -15,12 +16,11 @@ export type APIResponse<T> = {
  * @example
  * ```ts
  * const response = createAPIResponse({ message: "Hello, World!" });
- * console.log(response);
  * // => { data: { message: "Hello, World!" }, status: 200 }
  * ```
  */
-export function createAPIResponse<T>(data: T): APIResponse<T> {
-  return { data, status: 200 };
+export function createAPIResponse<T>(data: T): APISuccessResponse<T> {
+  return { type: "success", data, status: 200 };
 }
 
 /**
