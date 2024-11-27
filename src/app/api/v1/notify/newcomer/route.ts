@@ -1,8 +1,19 @@
-import type { NextRequest } from "next/server";
+import { cookies } from "next/headers";
+import { type NextRequest } from "next/server";
 
-import { CONTACT_TOOL_JA, OCCUPATIONAL_STATUS_JA } from "@/constants";
+import {
+  API_NOTIFY_NEWCOMER,
+  CONTACT_TOOL_JA,
+  OCCUPATIONAL_STATUS_JA,
+} from "@/constants";
 import { NewcomerSchema } from "@/models";
-import { Discord, handleAPIError, handleAPISuccess } from "@/server";
+import {
+  APIError,
+  Discord,
+  handleAPIError,
+  handleAPISuccess,
+  TokenManager,
+} from "@/server";
 
 /**
  * API: 入会申請の通知
@@ -17,9 +28,37 @@ export async function POST(request: NextRequest) {
     const validatedData = NewcomerSchema.parse(body);
 
     /**
-     * @todo Discord Webhook を実行して申請を通知する
-     * ! 外部から実行されないような対策が必要
-     * ! 本番環境でのみ実行する
+     * 正規リクエスト確認
+     * テストではスキップ
+     */
+    if (process.env.NODE_ENV !== "test") {
+      // 正規リクエスト確認のトークンを取得
+      const cookieToken = cookies().get(
+        API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME
+      )?.value;
+      const headerToken = request.headers.get(
+        API_NOTIFY_NEWCOMER.TOKEN_HEADER_NAME
+      );
+      const formToken = validatedData.csrfToken;
+
+      // 正規リクエスト確認のトークンを Cookie から削除
+      cookies().delete(API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME);
+
+      // 正規リクエスト検証
+      const isValidRequest = TokenManager.validate({
+        cookieToken,
+        headerToken,
+        formToken,
+      });
+
+      if (!isValidRequest) {
+        return handleAPIError(new APIError("不正なリクエストです", 401, "401"));
+      }
+    }
+
+    /**
+     * Discord Webhook を実行して申請を通知
+     * 本番環境でのみ実行
      */
     if (process.env.NODE_ENV === "production") {
       Discord.Webhook.executeWebhook({
