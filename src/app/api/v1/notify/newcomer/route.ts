@@ -10,10 +10,7 @@ import { Discord, handleAPIError, handleAPISuccess } from "@/server";
  * Mock test: test/api/notify/newcomer.test.ts
  */
 export async function POST(request: NextRequest) {
-  const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
-  if (!DISCORD_WEBHOOK_URL) {
-    return new Error("DISCORD_WEBHOOK_URL を環境変数に設定してください");
-  }
+  const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "";
 
   try {
     const body = await request.json();
