@@ -16,7 +16,7 @@ export type APISuccessResponse<T> = {
  * @example
  * ```ts
  * const response = createAPIResponse({ message: "Hello, World!" });
- * // => { data: { message: "Hello, World!" }, status: 200 }
+ * // => { type: "success", data: { message: "Hello, World!" }, status: 200 }
  * ```
  */
 export function createAPIResponse<T>(data: T): APISuccessResponse<T> {
@@ -32,7 +32,7 @@ export function createAPIResponse<T>(data: T): APISuccessResponse<T> {
  * try {
  *   // API処理
  *   return handleAPISuccess(data);
- *   // => { data: data, status: 200 }
+ *   // => { type: "success", data: data, status: 200 }
  * } catch (error) {
  *   return handleAPIError(error);
  * }

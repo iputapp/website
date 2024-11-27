@@ -25,7 +25,7 @@ export type APIErrorResponse = {
  *   }
  * } catch (error) {
  *   return handleAPIError(error);
- *   // => { error: { message: "エラーメッセージ", code: "ERROR_CODE" }, status: 403 }
+ *   // => { type: "error", error: { message: "エラーメッセージ", code: "ERROR_CODE" }, status: 403 }
  * }
  * ```
  */
@@ -50,9 +50,9 @@ export class APIError extends Error {
  *   // API処理
  * } catch (error) {
  *   return handleAPIError(error);
- *   // APIError => { error: { message: error.message, code: error.code }, status: error.status }
- *   // ZodError => { error: { message: "入力値が不正です", details: error.errors }, status: 400 }
- *   // OtherError => { error: { message: "サーバーエラーが発生しました" }, status: 500 }
+ *   // APIError => { type: "error", error: { message: error.message, code: error.code }, status: error.status }
+ *   // ZodError => { type: "error", error: { message: "入力値が不正です", details: error.errors }, status: 400 }
+ *   // OtherError => { type: "error", error: { message: "サーバーエラーが発生しました" }, status: 500 }
  * }
  * ```
  */
