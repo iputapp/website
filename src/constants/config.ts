@@ -16,3 +16,8 @@ export const OCCUPATIONAL_STATUS = [
 ] as const;
 
 export const CONTACT_TOOL = ["EMAIL", "DISCORD", "SLACK"] as const;
+
+export const API_NOTIFY_NEWCOMER = {
+  TOKEN_COOKIE_NAME: "xy-csrf-token",
+  TOKEN_HEADER_NAME: "XY-CSRF-Token",
+};
