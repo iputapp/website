@@ -1,10 +1,6 @@
 import type { NextRequest } from "next/server";
 
-import {
-  CONTACT_TOOL_JA,
-  DISCORD_WEBHOOK_URL,
-  OCCUPATIONAL_STATUS_JA,
-} from "@/constants";
+import { CONTACT_TOOL_JA, OCCUPATIONAL_STATUS_JA } from "@/constants";
 import { NewcomerSchema } from "@/models";
 import { Discord, handleAPIError, handleAPISuccess } from "@/server";
 
@@ -14,6 +10,11 @@ import { Discord, handleAPIError, handleAPISuccess } from "@/server";
  * Mock test: test/api/notify/newcomer.test.ts
  */
 export async function POST(request: NextRequest) {
+  const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+  if (!DISCORD_WEBHOOK_URL) {
+    return new Error("DISCORD_WEBHOOK_URL を環境変数に設定してください");
+  }
+
   try {
     const body = await request.json();
     const validatedData = NewcomerSchema.parse(body);
