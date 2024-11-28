@@ -13,7 +13,7 @@ import { sendApply } from "./client-actions";
 import { setTokenToCookie } from "./server-actions";
 
 /**
- * 申請フォームコンポーネント
+ * 入会申請フォームコンポーネント
  * @param token - 正規リクエスト検証のトークン
  */
 export function Form({ token }: { token: string }) {

@@ -2,6 +2,9 @@ import { TokenManager } from "@/server";
 
 import { Form } from "./form";
 
+/**
+ * 入会申請ページ
+ */
 export default function Page() {
   // 正規リクエスト検証のトークンを生成
   const token = TokenManager.generate();
