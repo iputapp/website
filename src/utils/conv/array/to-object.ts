@@ -8,13 +8,7 @@ export function arrayToObject<T extends string | number | symbol, V>(
   array: T[],
   { value }: { value?: V } = {}
 ): Record<T, V> {
-  return array.reduce(
-    (acc, curr) => {
-      acc[curr] = value as V;
-      return acc;
-    },
-    {} as Record<T, V>
-  );
+  return Object.fromEntries(array.map((key) => [key, value])) as Record<T, V>;
 }
 
 /**
@@ -25,13 +19,10 @@ export function arrayToObject<T extends string | number | symbol, V>(
 export function arrayToIndexMap<T extends string | number | symbol>(
   array: T[]
 ): Record<T, number> {
-  return array.reduce(
-    (acc, curr, index) => {
-      acc[curr] = index;
-      return acc;
-    },
-    {} as Record<T, number>
-  );
+  return Object.fromEntries(array.map((key, index) => [key, index])) as Record<
+    T,
+    number
+  >;
 }
 
 /**
@@ -44,11 +35,7 @@ export function arrayToValueMap<T extends string | number | symbol, V>(
   array: T[],
   getValue: (item: T, index: number) => V
 ): Record<T, V> {
-  return array.reduce(
-    (acc, curr, index) => {
-      acc[curr] = getValue(curr, index);
-      return acc;
-    },
-    {} as Record<T, V>
-  );
+  return Object.fromEntries(
+    array.map((key, index) => [key, getValue(key, index)])
+  ) as Record<T, V>;
 }
