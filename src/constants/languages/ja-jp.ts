@@ -3,7 +3,8 @@ import { arrayToValueMap } from "@/utils";
 
 /**
  * 職業ステータス (日本語)
- * マップ: @/constants/config.tsの`OCCUPATIONAL_STATUS`に対応
+ *
+ * マップ: `@/constants/config.ts`の`OCCUPATIONAL_STATUS`に対応
  */
 export const OCCUPATIONAL_STATUS_JA = arrayToValueMap(
   [...OCCUPATIONAL_STATUS],
@@ -23,7 +24,8 @@ export const OCCUPATIONAL_STATUS_JA = arrayToValueMap(
 
 /**
  * 連絡ツール (日本語)
- * マップ: @/constants/config.tsの`CONTACT_TOOL`に対応
+ *
+ * マップ: `@/constants/config.ts`の`CONTACT_TOOL`に対応
  */
 export const CONTACT_TOOL_JA = arrayToValueMap([...CONTACT_TOOL], (value) => {
   switch (value) {
