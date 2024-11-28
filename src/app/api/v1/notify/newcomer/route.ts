@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { type NextRequest } from "next/server";
+import type { NextRequest } from "next/server";
 
 import {
   API_NOTIFY_NEWCOMER,
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
       });
 
       if (!isValidRequest) {
-        return handleAPIError(new APIError("不正なリクエストです", 401, "401"));
+        return handleAPIError(new APIError("不正なリクエストです", 401));
       }
     }
 
