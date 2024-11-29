@@ -34,5 +34,5 @@ export function createAPIResponse<T>(data: T): APISuccessResponse<T> {
 export function handleAPISuccess<T>(
   data: T
 ): ReturnType<typeof NextResponse.json<APISuccessResponse<T>>> {
-  return NextResponse.json(createAPIResponse(data));
+  return NextResponse.json(createAPIResponse(data), { status: 200 });
 }
