@@ -1,13 +1,6 @@
 import { NextResponse } from "next/server";
 
-/**
- * APIレスポンス (成功)
- */
-export type APISuccessResponse<T> = {
-  type: "success";
-  data: T;
-  status: number;
-};
+import type { APISuccessResponse } from "./types";
 
 /**
  * API成功時のオブジェクトを生成する
