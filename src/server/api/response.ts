@@ -1,13 +1,6 @@
 import { NextResponse } from "next/server";
 
-/**
- * APIレスポンス (成功)
- */
-export type APISuccessResponse<T> = {
-  type: "success";
-  data: T;
-  status: number;
-};
+import type { APISuccessResponse } from "./types";
 
 /**
  * API成功時のオブジェクトを生成する
@@ -38,6 +31,8 @@ export function createAPIResponse<T>(data: T): APISuccessResponse<T> {
  * }
  * ```
  */
-export function handleAPISuccess<T>(data: T) {
-  return NextResponse.json(createAPIResponse(data));
+export function handleAPISuccess<T>(
+  data: T
+): ReturnType<typeof NextResponse.json<APISuccessResponse<T>>> {
+  return NextResponse.json(createAPIResponse(data), { status: 200 });
 }

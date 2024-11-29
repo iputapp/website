@@ -1,18 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-/**
- * APIレスポンス (エラー)
- */
-export type APIErrorResponse = {
-  type: "error";
-  error: {
-    message: string;
-    code?: string;
-    details?: unknown;
-  };
-  status: number;
-};
+import type { APIErrorResponse } from "./types";
 
 /**
  * [JavaScript `Error()` constructor](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/Error) を拡張したAPIエラー用のクラス
@@ -56,7 +45,9 @@ export class APIError extends Error {
  * }
  * ```
  */
-export function handleAPIError(error: unknown) {
+export function handleAPIError(
+  error: unknown
+): ReturnType<typeof NextResponse.json<APIErrorResponse>> {
   if (error instanceof APIError) {
     return NextResponse.json(
       {
@@ -65,6 +56,7 @@ export function handleAPIError(error: unknown) {
           message: error.message,
           code: error.code,
         },
+        status: error.status,
       },
       { status: error.status }
     );
@@ -78,6 +70,7 @@ export function handleAPIError(error: unknown) {
           message: "入力値が不正です",
           details: error.errors,
         },
+        status: 400,
       },
       { status: 400 }
     );
@@ -85,7 +78,11 @@ export function handleAPIError(error: unknown) {
 
   console.error(error);
   return NextResponse.json(
-    { type: "error", error: { message: "サーバーエラーが発生しました" } },
+    {
+      type: "error",
+      error: { message: "サーバーエラーが発生しました" },
+      status: 500,
+    },
     { status: 500 }
   );
 }
