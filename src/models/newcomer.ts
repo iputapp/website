@@ -21,6 +21,7 @@ export const NewcomerSchema = z
         "IPUT_TOKYO_STUDENT",
         "COCOON_TOWER_STUDENT",
       ];
+      // コクーンタワーの学生は学籍番号が必要
       if (
         cocoonTowerStudent.includes(data.occupationalStatus) &&
         !data.studentId
@@ -35,6 +36,7 @@ export const NewcomerSchema = z
     }
   )
   .superRefine((data, ctx) => {
+    // 連絡ツールがメールの場合、メールアドレスの形式をチェック
     if (
       data.contactTool === "EMAIL" &&
       !z.string().email().safeParse(data.contactDetail).success
