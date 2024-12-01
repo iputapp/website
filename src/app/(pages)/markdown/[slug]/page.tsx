@@ -13,16 +13,14 @@ export default async function Page({ params }: DynamicSegment<"slug">) {
     filePath: ARTICLE_FILE_PATH,
   });
 
-  // Markdownファイルの読み込みに失敗した場合
+  // Markdown ファイルの読み込みに失敗した場合
   if (!content.success) {
-    return (
-      <div className="grid h-dvh w-full place-content-center">
-        Markdownファイルが見つかりません
-      </div>
-    );
+    return notFound();
   }
 
-  // Markdownファイルから記事情報を取得
+  /**
+   * Markdown を記事情報にパース
+   */
   const article = await parseMarkdown(content.data);
 
   // 非公開記事の場合は 404 ページを表示
