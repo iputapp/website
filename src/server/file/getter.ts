@@ -1,4 +1,4 @@
-import { readdirSync } from "fs";
+import { readdirSync, statSync } from "fs";
 import { extname, join, parse } from "path";
 
 import { handleFileError } from "./error";
@@ -62,6 +62,34 @@ export function getFilenames({
     };
   } catch (error) {
     const fileError = handleFileError(error, "read directory");
+    console.error(fileError);
+    return {
+      success: false,
+      error: fileError,
+    };
+  }
+}
+
+/**
+ * ファイルの作成日時を取得する
+ * @param filePath - 検索対象のファイルパス (相対パス)
+ * @returns ファイルの作成日時
+ */
+export function getFileCreationDate({
+  filePath,
+}: {
+  filePath: string;
+}): FileOperationResult<Date> {
+  try {
+    const absoluteFilePath = join(process.cwd(), filePath);
+    // ファイルの作成日時を取得
+    const { birthtime } = statSync(absoluteFilePath);
+    return {
+      success: true,
+      data: birthtime,
+    };
+  } catch (error) {
+    const fileError = handleFileError(error, "get file creation date");
     console.error(fileError);
     return {
       success: false,
