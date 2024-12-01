@@ -1,18 +1,11 @@
 ---
-title: "記事のタイトル"
+title: "これはサンプルの記事です。"
 eyecatch: "🧸"
 eyecatchUrl: "/images/sample.png"
 status: "public"
-tags: ["lounas", "豆知識"]
+tags: ["サンプル"]
 ---
 
 # ここから本文を書く
 
 レポジトリ内のmarkdownsフォルダにアップロード
-
-```ts
-// コードブロックやで
-export function foobar() {
-  console.log("コードブロック");
-}
-```
