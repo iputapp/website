@@ -17,7 +17,7 @@ export default async function Page() {
   });
 
   // ファイル名の取得に失敗した場合
-  if (!filenames.success || !filenames.data || !!filenames.error) {
+  if (!filenames.success) {
     return (
       <div className="grid h-dvh w-full place-content-center">
         ディレクトリが見つかりません
