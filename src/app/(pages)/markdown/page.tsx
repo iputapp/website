@@ -47,16 +47,14 @@ export default async function Page() {
     })
   );
 
-  /**
-   * @todo `article.data.status`が`public`の記事のみ表示する
-   */
-
   return (
     <main className="mx-auto grid w-full max-w-screen-md gap-12 p-12">
       <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {articles.map(
           (article) =>
-            article && (
+            article &&
+            // 公開記事のみ表示
+            article.data.status === "public" && (
               <Link
                 key={article.slug}
                 className="grid overflow-hidden rounded-2xl bg-neutral-200 shadow dark:bg-neutral-700"
