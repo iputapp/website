@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 import { MarkdownContent } from "@/components";
 import { MARKDOWN_DIR_PATH } from "@/constants";
@@ -24,9 +25,10 @@ export default async function Page({ params }: DynamicSegment<"slug">) {
   // Markdownファイルから記事情報を取得
   const article = await parseMarkdown(content.data);
 
-  /**
-   * @todo `article.status`が`public` or `shared`の記事のみ表示する
-   */
+  // 非公開記事の場合は 404 ページを表示
+  if (article.status === "private") {
+    return notFound();
+  }
 
   return (
     <main className="mx-auto grid w-full max-w-screen-md gap-12 p-12">
