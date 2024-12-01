@@ -34,14 +34,7 @@ export default async function Page() {
       const creationDate = getFileCreationDate({
         filePath: `${ARTICLE_DIR_PATH}/${filename}`,
       });
-      if (
-        !content.success ||
-        !!content.error ||
-        !content.data ||
-        !creationDate.success ||
-        !!creationDate.error ||
-        !creationDate.data
-      ) {
+      if (!content.success || !creationDate.success) {
         return null;
       }
       return {

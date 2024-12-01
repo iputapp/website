@@ -13,7 +13,7 @@ export default async function Page({ params }: DynamicSegment<"slug">) {
   });
 
   // Markdownファイルの読み込みに失敗した場合
-  if (!content.success || !content.data || !!content.error) {
+  if (!content.success) {
     return (
       <div className="grid h-dvh w-full place-content-center">
         Markdownファイルが見つかりません
