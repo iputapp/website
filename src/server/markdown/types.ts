@@ -14,5 +14,6 @@ export interface CustomComponents {
   h1?: ComponentType<any>;
   h2?: ComponentType<any>;
   p?: ComponentType<any>;
+  pre?: ComponentType<any>;
   code?: ComponentType<any>;
 }

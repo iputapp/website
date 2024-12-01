@@ -65,10 +65,15 @@ export default async function Page({ params }: DynamicSegment<"slug">) {
               <h1 className="my-10 border-b-2 py-2.5 text-2xl">{children}</h1>
             ),
             p: ({ children }) => <p className="mt-8 opacity-75">{children}</p>,
-            code: ({ children }) => (
+            pre: ({ children }) => (
               <pre className="mt-8 rounded-lg bg-neutral-200 p-4 font-mono text-sm dark:bg-neutral-700">
                 {children}
               </pre>
+            ),
+            code: ({ children }) => (
+              <code className="mx-0.5 rounded-lg bg-neutral-200 px-1.5 py-1 font-mono text-sm dark:bg-neutral-700">
+                {children}
+              </code>
             ),
           }}
         />
