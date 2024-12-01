@@ -1,6 +1,6 @@
 ---
 title: "限定公開の記事"
-eyecatch: "🔒"
+eyecatch: "🔗"
 status: "shared"
 tags: ["記事の書き方"]
 ---
