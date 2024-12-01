@@ -4,8 +4,18 @@ export type { FileOperationError };
 
 export type FileExtension = "md" | "txt";
 
-export type FileOperationResult<T> = {
-  success: boolean;
-  data?: T;
-  error?: FileOperationError;
+type FileOperationSuccess<T> = {
+  success: true;
+  data: T;
+  error?: never;
 };
+
+type FileOperationFailure = {
+  success: false;
+  data?: never;
+  error: FileOperationError;
+};
+
+export type FileOperationResult<T> =
+  | FileOperationSuccess<T>
+  | FileOperationFailure;
