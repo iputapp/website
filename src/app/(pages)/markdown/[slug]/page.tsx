@@ -1,32 +1,13 @@
 import Image from "next/image";
-import { notFound } from "next/navigation";
 
 import { MarkdownContent } from "@/components";
 import { MARKDOWN_DIR_PATH } from "@/constants";
-import { parseMarkdown, readFileContent } from "@/server";
+import { getArticle } from "@/server";
 import type { DynamicSegments } from "@/types";
 
 export default async function Page({ params }: DynamicSegments<"slug">) {
-  const ARTICLE_FILE_PATH = `${MARKDOWN_DIR_PATH}/sample/${params.slug}.md`;
-
-  const content = readFileContent({
-    filePath: ARTICLE_FILE_PATH,
-  });
-
-  // Markdown ファイルの読み込みに失敗した場合
-  if (!content.success) {
-    return notFound();
-  }
-
-  /**
-   * Markdown を記事情報にパース
-   */
-  const article = await parseMarkdown(content.data);
-
-  // 非公開記事の場合は 404 ページを表示
-  if (article.status === "private") {
-    return notFound();
-  }
+  const { slug } = params;
+  const article = await getArticle(`${MARKDOWN_DIR_PATH}/sample/${slug}.md`);
 
   return (
     <main className="mx-auto grid w-full max-w-screen-md gap-12 p-12">
