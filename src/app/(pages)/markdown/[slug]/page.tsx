@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import { MarkdownContent } from "@/components";
 import { MARKDOWN_DIR_PATH } from "@/constants";
 import { parseMarkdown, readFileContent } from "@/server";
-import type { DynamicSegment } from "@/types";
+import type { DynamicSegments } from "@/types";
 
-export default async function Page({ params }: DynamicSegment<"slug">) {
+export default async function Page({ params }: DynamicSegments<"slug">) {
   const ARTICLE_FILE_PATH = `${MARKDOWN_DIR_PATH}/sample/${params.slug}.md`;
 
   const content = readFileContent({

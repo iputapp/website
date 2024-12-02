@@ -2,15 +2,15 @@
  * Next.js の Dynamic Segments に対応する型
  * @example
  * ```tsx
- * import type { DynamicSegment } from "@/types";
- * export default async function Page({ params }: DynamicSegment<"slug">) {
+ * import type { DynamicSegments } from "@/types";
+ * export default async function Page({ params }: DynamicSegments<"slug">) {
  *   console.log(params.slug);
  *   // => "foo"
  * }
  * ```
  * @see {@link https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes}
  */
-export type DynamicSegment<T extends string = "id"> = {
+export type DynamicSegments<T extends string = "id"> = {
   params: { [K in T]: string };
 };
 
