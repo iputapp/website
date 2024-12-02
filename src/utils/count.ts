@@ -6,8 +6,11 @@
  */
 export function countGraphemes(
   str: string,
-  { locales }: { locales?: string } = { locales: "ja-JP" }
+  options: {
+    locales?: string;
+  } = {}
 ): number {
+  const { locales = "ja-JP" } = options;
   const segmenter = new Intl.Segmenter(locales, { granularity: "grapheme" });
   return [...segmenter.segment(str)].length;
 }
