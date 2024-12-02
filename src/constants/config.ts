@@ -2,9 +2,9 @@
  * ホストサーバのURL
  */
 export const HOST_ORIGIN_URL =
-  process.env.NODE_ENV === "development"
+  process.env.NODE_ENV !== "production"
     ? "http://localhost:3000"
-    : process.env.HOST_ORIGIN_URL || "http://localhost:3000";
+    : new URL(process.env.HOST_ORIGIN_URL || "").origin;
 
 /**
  * ホストサーバのドメイン
