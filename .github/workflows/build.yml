@@ -36,3 +36,5 @@ jobs:
         run: npm i
       - name: Build
         run: npm run build
+        env:
+          HOST_ORIGIN_URL: ${{ secrets.HOST_ORIGIN_URL }} # 詳細は #22 を参照
