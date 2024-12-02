@@ -5,7 +5,7 @@ import { Form } from "./form";
 /**
  * 入会申請ページ
  */
-export default function Page() {
+export default async function Page() {
   // 正規リクエスト検証のトークンを生成
   const token = TokenManager.generate();
 
