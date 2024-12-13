@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning className="h-full">
-      <body className="h-full">
+    <html suppressHydrationWarning>
+      <body>
         <Providers
           nextThemeProviderProps={{
             attribute: "class",
