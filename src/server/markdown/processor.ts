@@ -9,13 +9,13 @@ import remarkParseFrontmatter from "remark-parse-frontmatter";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
-import type { CustomComponents } from "./types";
+import type { MarkdownComponents } from "./types";
 
 /**
  * Markdown プロセッサ
  * @param components - コンポーネントマッピング
  */
-export function markdownProcessor(components: CustomComponents = {}) {
+export function markdownProcessor(components: MarkdownComponents = {}) {
   return unified()
     .use(remarkParse)
     .use(remarkFrontmatter)
