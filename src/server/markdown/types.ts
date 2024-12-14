@@ -8,7 +8,7 @@ export type { Article };
  * HTMLとコンポーネントのマッピング
  * @todo 必要なHTMLタグを追加する
  */
-export interface CustomComponents {
+export interface MarkdownComponents {
   h1?: ComponentType<ComponentProps<"h1">>;
   h2?: ComponentType<ComponentProps<"h2">>;
   p?: ComponentType<ComponentProps<"p">>;

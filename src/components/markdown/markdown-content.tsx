@@ -1,8 +1,8 @@
-import { type CustomComponents, markdownProcessor } from "@/server";
+import { type MarkdownComponents, markdownProcessor } from "@/server";
 
 interface MarkdownContentProps {
   content: string;
-  components?: CustomComponents;
+  components?: MarkdownComponents;
 }
 
 /**
