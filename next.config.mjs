@@ -1,3 +1,4 @@
+import NextBundleAnalyzer from "@next/bundle-analyzer";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -23,4 +24,12 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+/** @see {@link https://nextjs.org/docs/app/building-your-application/optimizing/package-bundling} */
+const withBundleAnalyzer =
+  process.env.ANALYZE === "true"
+    ? NextBundleAnalyzer({
+        enabled: true,
+      })
+    : (config) => config;
+
+export default withBundleAnalyzer(nextConfig);
