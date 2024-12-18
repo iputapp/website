@@ -4,7 +4,7 @@
 export const HOST_ORIGIN_URL =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:3000"
-    : new URL(process.env.HOST_ORIGIN_URL || "").origin;
+    : new URL(process.env.NEXT_PUBLIC_HOST_ORIGIN_URL || "").origin;
 
 /**
  * ホストサーバのドメイン
