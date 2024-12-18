@@ -67,7 +67,7 @@ npm = ">=10.9"
 ### 環境変数
 
 ```ini
-HOST_ORIGIN_URL="http://localhost:3000"
+NEXT_PUBLIC_HOST_ORIGIN_URL="http://localhost:3000"
 MARKDOWN_DIR_PATH="markdowns"
 DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/{your-webhook-id}/{your-webhook-token}"
 ```
