@@ -12,8 +12,8 @@ import type { EmptyObject } from "./utils";
  * ```
  * @see {@link https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes}
  */
-export type DynamicSegments<T extends string = "id"> = {
-  params: { [K in T]: string };
+export type DynamicSegments<T extends string = "slug"> = {
+  params: Promise<{ [K in T]: string }>;
 };
 
 /**
@@ -29,5 +29,5 @@ export type DynamicSegments<T extends string = "id"> = {
  * @see {@link https://nextjs.org/docs/app/api-reference/file-conventions/page#searchparams-optional}
  */
 export type SearchParams<T extends object = EmptyObject> = {
-  searchParams: { [K in keyof T]: string | string[] | undefined };
+  searchParams: Promise<{ [K in keyof T]: string | string[] | undefined }>;
 };
