@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
      */
     if (process.env.NODE_ENV !== "test") {
       // 正規リクエスト検証のトークンを取得
-      const cookieToken = cookies().get(
+      const cookieToken = (await cookies()).get(
         API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME
       )?.value;
       const headerToken = request.headers.get(
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
       const formToken = validatedData.csrfToken;
 
       // 正規リクエスト検証のトークンを Cookie から削除
-      cookies().delete(API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME);
+      (await cookies()).delete(API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME);
 
       // 正規リクエスト検証
       const isValidRequest = TokenManager.validate({

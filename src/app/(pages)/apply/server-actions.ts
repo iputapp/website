@@ -10,7 +10,7 @@ import { TokenManager } from "@/server";
  * @param token - トークン
  */
 export async function setTokenToCookie(token: string): Promise<void> {
-  cookies().set({
+  (await cookies()).set({
     name: API_NOTIFY_NEWCOMER.TOKEN_COOKIE_NAME,
     value: token,
     expires: new Date(Date.now() + TokenManager.DEFAULT_MAX_AGE),
