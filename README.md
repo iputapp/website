@@ -35,7 +35,6 @@
 - [tailwind-variants](https://www.tailwind-variants.org)
 - [clsx & tailwind-merge](./src/utils/cn.ts)
 - [next-themes](https://github.com/pacocoursey/next-themes)
-- [next-test-api-route-handler](https://github.com/Xunnamius/next-test-api-route-handler)
 
 ## Architecture
 
