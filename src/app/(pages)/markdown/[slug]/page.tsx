@@ -6,7 +6,7 @@ import { getArticle } from "@/server";
 import type { DynamicSegments } from "@/types";
 
 export default async function Page({ params }: DynamicSegments<"slug">) {
-  const { slug } = params;
+  const { slug } = await params;
   const article = await getArticle(`${MARKDOWN_DIR_PATH}/sample/${slug}.md`);
 
   return (
