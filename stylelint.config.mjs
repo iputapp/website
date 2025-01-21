@@ -1,5 +1,5 @@
 /** @type {import("stylelint").Config} */
-const stylelintConfig = {
+const config = {
   extends: [
     "stylelint-config-standard",
     "stylelint-config-standard-scss",
@@ -14,7 +14,13 @@ const stylelintConfig = {
         ignoreAtRules: ["tailwind"],
       },
     ],
+    "at-rule-no-deprecated": [
+      true,
+      {
+        ignoreAtRules: ["apply"],
+      },
+    ],
   },
 };
 
-export default stylelintConfig;
+export default config;
