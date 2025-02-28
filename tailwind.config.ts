@@ -8,7 +8,17 @@ const config: Config = {
     "./stories/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "line-write": "lineAnimation 1s linear 1",
+      },
+      keyframes: {
+        lineAnimation: {
+          "0%": { "stroke-dashoffset": "3000", "stroke-dasharray": "3000" },
+          "100%": { "stroke-dashoffset": "0", "stroke-dasharray": "3000" },
+        },
+      },
+    },
   },
   darkMode: "class",
   plugins: [],

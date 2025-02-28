@@ -9,7 +9,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -42,6 +41,7 @@ export default function Page() {
           </div>
 
           <svg
+            className="animate-line-write"
             width="576"
             height="245"
             viewBox="0 0 576 245"
@@ -60,15 +60,24 @@ export default function Page() {
             />
           </svg>
         </div>
-        <div className="col-span-6"></div>
+        <div className="col-span-6">
+          {/* 仮画像 後々画像もらい差し替えること */}
+          <Image
+            className="pl-16 pt-32"
+            src="/images/kari.png" // 画像のパス
+            alt="Picture of the author" // 代替テキスト（必須）
+            layout="responsive"
+            width={5} // 幅（必須）
+            height={8} // 高さ（必須）
+            sizes="50vw"
+          />
+        </div>
       </div>
       <div className="grid w-full auto-rows-fr grid-cols-12 gap-x-8 rounded-t-[6.25rem] bg-white p-8 shadow-[0px_5px_30px_rgba(0,0,0,0.35)]">
         {/* 活動方針 */}
         <div className="col-span-12">
-          <motion.div animate={{ rotate: 135 }}>
-            <p className="text-5xl text-slate-950">---テスト---</p>
-          </motion.div>
           <svg
+            className="animate-line-write"
             width="402"
             height="174"
             viewBox="0 0 402 174"
@@ -423,6 +432,7 @@ export default function Page() {
       <div className="grid w-full auto-rows-fr grid-cols-12 gap-x-8">
         <div className="col-span-7 place-content-center place-items-center">
           <svg
+            className="animate-line-write"
             viewBox="0 0 593 216"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -488,6 +498,7 @@ export default function Page() {
       <div className="grid auto-rows-[minmax(1fr,0)] grid-cols-12 content-center gap-8 bg-[#FFD59A] p-8 md:auto-rows-fr md:gap-y-0">
         <div className="col-span-12 place-content-center place-items-center md:col-span-7">
           <svg
+            className="animate-line-write"
             viewBox="0 0 641 145"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -674,7 +685,7 @@ export default function Page() {
                 viewBox="0 0 546 276"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-[85%]"
+                className="w-[85%] animate-line-write"
               >
                 <path
                   d="M35.64 159.319C47.4565 142.658 61.0772 127.711 74.913 112.712C94.9925 90.9449 115.809 69.8738 135.79 48.0123C138.959 44.5453 142.478 38.3607 146.635 35.9218C148.69 34.7163 145.461 40.561 144.511 42.7457C139.383 54.5417 134.561 66.4504 129.929 78.451C120.065 104.008 110.397 129.704 101.812 155.723C97.1472 169.862 93.1458 184.197 88.5891 198.365C85.7415 207.22 82.3651 216.048 81.1423 225.321C80.7068 228.624 81.5369 227.596 83.5491 225.633C88.9091 220.404 94.2946 215.198 99.632 209.946C131.253 178.831 162.186 146.975 194.488 116.563C208.503 103.368 222.77 90.4964 237.385 77.9697C240.655 75.1665 243.836 72.3311 246.927 69.3336C247.912 68.3779 250.945 64.3478 252.732 64.6899C257.537 65.6101 248.091 105.018 247.777 106.653C242.493 134.145 236.389 161.327 229.881 188.54C227.891 196.863 226.696 205.096 225.408 213.514C225.018 216.062 221.9 225.52 227.39 221.159C233.607 216.22 238.061 208.166 242.736 201.99C261.604 177.063 282.639 154.086 303.982 131.287C318.418 115.866 332.796 100.361 348.069 85.7563C352.19 81.8149 356.373 77.8494 360.669 74.0905C362.365 72.6065 361.738 74.6912 361.603 76.1292C360.566 87.2054 357.835 98.1396 355.572 109.003C350.431 133.68 344.506 158.102 338.328 182.537C334.919 196.02 331.467 209.501 328.474 223.084C327.313 228.356 325.416 234.661 325.416 240.187C325.416 243.168 329.612 236.534 330.145 235.883C338.595 225.555 346.746 214.965 355.657 205.019C381.694 175.96 411.008 148.928 442.584 125.964C455.256 116.748 467.955 107.87 480.045 97.8752C488.936 90.5256 498.471 83.7164 506.888 75.8177C507.543 75.2028 508.369 73.6675 509.068 74.2321C510.929 75.7349 510.776 83.954 510.824 85.4165C511.663 111.376 503.895 137.165 498.138 162.207C492.379 187.259 486.816 212.367 480.583 237.299"
