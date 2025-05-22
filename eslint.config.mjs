@@ -110,6 +110,7 @@ const config = ts.config(
   // Custom rules
   {
     rules: {
+      '@next/next/no-html-link-for-pages': 'off',
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-empty-object-type": [
         "error",
