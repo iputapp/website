@@ -12,6 +12,16 @@ const config: NextConfig = {
     implementation: "sass-embedded",
     includePaths: [join(__dirname, "src/styles")],
   },
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
 };
 
 /** @see {@link https://nextjs.org/docs/app/building-your-application/optimizing/package-bundling} */
