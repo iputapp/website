@@ -18,8 +18,8 @@ export default function CardOtherProject({
   return (
     <div
       className="
-        relative flex-none w-[400px] h-[600px] snap-center
-        overflow-hidden rounded-[2.5rem] shadow-md transition hover:brightness-105
+        relative flex-none aspect-[2/3] w-[clamp(250px,32vw,350px)] snap-center
+        overflow-hidden rounded-[2.5rem] shadow-md
       "
     >
       <Image
@@ -27,13 +27,12 @@ export default function CardOtherProject({
         alt=""                
         fill                 
         className="object-cover"
-        sizes="(max-width: 640px) 320px, 25vw"
         priority
       />
       <div
         className={`
-          absolute left-10 top-10 z-10 whitespace-pre-wrap
-          text-left text-3xl font-bold leading-snug
+          absolute left-[10%] top-[10%] z-10 whitespace-pre-wrap
+          text-left text-[clamp(20px,3vw,30px)] font-bold leading-snug
           ${textColor === 'white' ? 'text-white' : 'text-black'}
         `}
       >
