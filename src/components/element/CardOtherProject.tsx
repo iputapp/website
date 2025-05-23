@@ -1,20 +1,18 @@
-// src/components/element/CardOtherProject.tsx
 'use client'
 
 import Image from 'next/image'
-import { ReactNode } from 'react'
 
-export interface CardOtherProjectProps {
-  headline: string | ReactNode
-  textColor?: 'white' | 'black'
-  bgImage: string
-}
+type Card = {
+  bgImage: string;
+  headline: string;
+  textColor?: string; 
+};
 
 export default function CardOtherProject({
-  headline,
-  textColor = 'black',
-  bgImage,
-}: CardOtherProjectProps) {
+  card,
+}: {
+  card: Card;
+}) {
   return (
     <div
       className="
@@ -23,7 +21,7 @@ export default function CardOtherProject({
       "
     >
       <Image
-        src={bgImage}
+        src={card.bgImage}
         alt=""                
         fill                 
         className="object-cover"
@@ -33,10 +31,10 @@ export default function CardOtherProject({
         className={`
           absolute left-[10%] top-[10%] z-10 whitespace-pre-wrap
           text-left text-[clamp(20px,3vw,30px)] font-bold leading-snug
-          ${textColor === 'white' ? 'text-white' : 'text-black'}
+          ${card.textColor === 'white' ? 'text-white' : 'text-black'}
         `}
       >
-        {headline}
+        {card.headline}
       </div>
     </div>
   )

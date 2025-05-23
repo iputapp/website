@@ -1,4 +1,3 @@
-// src/components/element/CardProject.tsx
 'use client'
 
 import Image from 'next/image'

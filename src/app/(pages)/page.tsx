@@ -16,6 +16,7 @@ import DrowCirecle2 from "@/assets/icons/draw-circle-2.svg";
 import DrawLine from "@/assets/icons/draw-line.svg";
 import CardOtherProject from "@/components/element/CardOtherProject";
 import CardProject from "@/components/element/CardProject";
+import { Carousel } from "@/components/view/carousel";
 
 
 export default function Page() {
@@ -116,37 +117,51 @@ export default function Page() {
               gradient='radial-gradient(67.47% 67.47% at 50% 50%, #FF8000 0%, #FF8000 55%, #E07000 100%)'
             />
           </div>
-          <p className="mt-[10%] mb-[5%] text-[clamp(2rem,6vw,3.5rem)] font-bold">
+          <p className="mt-10 md:mt-20 mb-[5%] text-[clamp(2rem,6vw,3.5rem)] font-bold">
             こんなことも。
           </p>
           <div
             className="
-              relative left-1/2 w-screen -translate-x-1/2        
-              pl-[calc((100vw-theme(maxWidth.7xl))/2)]          
-              flex flex-nowrap gap-x-6 overflow-x-auto pb-4
-              hide-scrollbar
+              relative left-1/2 w-screen -translate-x-1/2 h-full                 
+              flex flex-nowrap pb-4
             "
           >
-            <CardOtherProject
-              headline={'技術記事を書いて\nアウトプット。'}
-              textColor="black"
-              bgImage="/images/card/zenncard.png"
-            />
-            <CardOtherProject
-              headline={'作ったアプリを\n学会で発表。'}
-              textColor="white"
-              bgImage="/images/card/kyotocard.png"
-            />
-            <CardOtherProject
-              headline={'みんなで知見を\n共有。'}
-              textColor="white"
-              bgImage="/images/card/devcard.png"
-            />
-            <CardOtherProject
-              headline={'みんなで知見を\n共有。'}
-              textColor="white"
-              bgImage="/images/card/devcard.png"
-            />
+          <Carousel
+            items={[
+              <CardOtherProject
+                key="zenn"
+                card={{
+                  headline: '技術記事を書いて\nアウトプット。',
+                  textColor: "black",
+                  bgImage: "/images/card/zenncard.png"
+                }}
+              />,
+              <CardOtherProject
+                key="kyoto"
+                card={{
+                  headline: '作ったアプリを\n学会で発表。',
+                  textColor: "white",
+                  bgImage: "/images/card/kyotocard.png"
+                }}
+              />,
+              <CardOtherProject
+                key="dev1"
+                card={{
+                  headline: 'みんなで知見を\n共有。',
+                  textColor: "white",
+                  bgImage: "/images/card/devcard.png"
+                }}
+              />,
+              <CardOtherProject
+                key="dev2"
+                card={{
+                  headline: 'みんなで知見を\n共有。',
+                  textColor: "white",
+                  bgImage: "/images/card/devcard.png"
+                }}
+              />
+            ]}
+          />
           </div>
         </div>
       </section>
@@ -239,3 +254,6 @@ export default function Page() {
     </div>
   );
 }
+
+
+
