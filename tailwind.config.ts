@@ -9,6 +9,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+      },
       animation: {
         "line-write": "lineAnimation 1s linear 1",
       },
