@@ -13,12 +13,12 @@ export default function Footer() {
             <Link href="/" className="flex items-cente space-x-3 rtl:space-x-reverse mb-5">
               <IputappLogo className="w-80 h-auto"/>
             </Link>
-            <ul className="flex flex-wrap items-center text-base md:text-2xl font-bold text-white">
+            <ul className="flex flex-wrap items-center text-base lg:text-2xl font-bold text-white">
               <li>
-                <Link href="#" className="hover:underline me-4 md:me-6">プライバシーポリシー</Link>
+                <Link href="#" className="hover:underline hover:decoration-red  me-4 md:me-6">プライバシーポリシー</Link>
               </li>
               <li>
-                <Link href="/apply" className="hover:underline me-4 md:me-6">参加申請</Link>
+                <Link href="/apply" className="hover:underline hover:decoration-red me-4 md:me-6">参加申請</Link>
               </li>
             </ul>
           </div>

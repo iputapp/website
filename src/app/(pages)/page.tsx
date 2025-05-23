@@ -56,7 +56,7 @@ export default function Page() {
       {/*  */}
       {/* ------- 活動方針 ------------------------------------------------------------------------------------------- */}
       {/*  */}
-      <section className="flex flex-col max-w-7xl mx-auto justify-start items-start  bg-white p-8 mb-10">
+      <section className="flex flex-col max-w-7xl mx-auto justify-start items-center lg:items-start  bg-white p-8 mb-10">
         <div className="relative flex justify-start items-start">
           <DrowCirecle2
             strokeWidth="9" 
@@ -153,23 +153,26 @@ export default function Page() {
       {/*  */}
       {/* ------- 言葉 ------------------------------------------------------------------------------------------- */}
       {/*  */}
-      <section className="flex flex-col max-w-7xl mx-auto justify-center py-20 bg-gray-100 md:bg-white md:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center w-full h-auto aspect-[16/9] mx-auto bg-gray-100 md:rounded-3xl p-8">
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-black mb-10 lg:mb-0"
-          >
-            <div className="relative flex flex-row items-center justify-center gap-x-2 mb-3">
-              <DrawLine className="text-green w-[200px] sm:w-[240px] md:w-[300px] xl:w-[400px] h-full" />
-              <h1 className="absolute inset-0 flex pr-12 md:pr-20 items-center justify-center font-bold ">
+      <section className="flex flex-col max-w-7xl mx-auto py-20 md:bg-white px-8">
+        <div className="flex flex-col lg:flex-row justify-around items-start md:items-center w-full h-auto bg-gray-100 rounded-3xl p-8">
+          <h2 className="text-2xl sm:text-4xl xl:text-5xl font-extrabold text-black mb-10 lg:mb-0 ">
+            <div className="relative flex flex-row items-end justify-start md:justify-center gap-x-2 md:mb-3">
+              <DrawLine className="text-green w-[200px] sm:w-[300px] xl:w-[400px] h-full" />
+              <h1 className="absolute inset-0 flex pl-5 md:pl-24 xl:pl-28 items-center justify-start font-bold ">
                 <span className="relative whitespace-nowrap text-white">
                   “やってみたい”
                 </span>
               </h1>
-              <h1 className="font-bold text-black">を、</h1>
+              <h1 className="font-bold text-black">を</h1>
             </div>
-            最初の一歩から応援します。
+            <span className="block md:hidden leading-normal">
+              最初の一歩から<br/>応援します。
+            </span>
+            <span className="hidden md:block">
+              最初の一歩から応援します。
+            </span>
           </h2>
-          <div className="mx-auto mb-8 text-base sm:text-xl xl:text-2xl text-center md:text-start font-bold text-[#252525]">
+          <div className="text-base sm:text-2xl text-start font-bold text-[#252525] py-">
             <p className="mb-8">
               未来なんて、
               <br />
@@ -209,7 +212,7 @@ export default function Page() {
       {/*  */}
       <section className="bg-white max-w-7xl mx-auto py-20">
         <div className="flex h-full w-full flex-col items-center gap-y-10">
-          <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold">
+          <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold pl-3">
             まずはお話しましょう！
           </h1>
           <div className="w-[clamp(300px,32vw,500px)] place-content-center place-items-center">
