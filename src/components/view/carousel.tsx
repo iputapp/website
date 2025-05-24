@@ -1,13 +1,11 @@
 "use client";
-import React, {
-  useEffect,
-} from "react";
+import React, { useEffect } from "react";
 
 import LeftIcon from "@/assets/icons/left.svg";
-import RightIcon from "@/assets/icons/right.svg"
+import RightIcon from "@/assets/icons/right.svg";
 
 interface CarouselProps {
-  items: React.ReactNode[]; 
+  items: React.ReactNode[];
   initialScroll?: number;
 }
 
@@ -50,15 +48,18 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         ref={carouselRef}
         onScroll={checkScrollability}
       >
-        <div className="flex flex-row justify-start gap-4 pl-8 pr-10 mx-auto max-w-7xl">
+        <div className="mx-auto flex max-w-7xl flex-row justify-start gap-4 pl-8 pr-10">
           {items.map((item, index) => (
-            <div key={"card" + index} className={index === items.length - 1 ? "pr-10" : ""}>
+            <div
+              key={"card" + index}
+              className={index === items.length - 1 ? "pr-10" : ""}
+            >
               {item}
             </div>
           ))}
         </div>
       </div>
-      <div className="mr-5 flex max-w-7xl mx-auto justify-end gap-5">
+      <div className="mx-auto mr-5 flex max-w-7xl justify-end gap-5">
         <button
           className="relative z-40 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
           onClick={scrollLeft}

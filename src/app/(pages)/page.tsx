@@ -19,31 +19,28 @@ import CardOtherProject from "@/components/element/CardOtherProject";
 import CardProject from "@/components/element/CardProject";
 import { Carousel } from "@/components/view/carousel";
 
-
 export default function Page() {
   // [削除]検証用にhtml, bodyに追加したclassNameは削除すること。
   return (
     <div className="w-full bg-white text-black">
-      <section className='flex flex-col h-screen min-h-[700px] max-w-7xl mx-auto bg-white'>
-        <div className="flex flex-1 w-full items-center justify-center px-8">
-          <div className="flex flex-col items-center gap-8 md:flex-row justify-center md:justify-between flex-1">
+      <section className="mx-auto flex h-screen min-h-[700px] max-w-7xl flex-col bg-white">
+        <div className="flex w-full flex-1 items-center justify-center px-8">
+          <div className="flex flex-1 flex-col items-center justify-center gap-8 md:flex-row md:justify-between">
             <div className="relative">
-              <DrowCirecle 
-                strokeWidth="9" 
-                className="text-orange animate-line-write max-w-[450px] w-full md:max-w-none"
+              <DrowCirecle
+                strokeWidth="9"
+                className="w-full max-w-[450px] animate-line-write text-orange md:max-w-none"
               />
-              <h1 className="absolute inset-0 flex items-center justify-center font-bold leading-relaxed text-[clamp(1.5rem,5vw,3rem)]">
+              <h1 className="absolute inset-0 flex items-center justify-center text-[clamp(1.5rem,5vw,3rem)] font-bold leading-relaxed">
                 <span className="text-start md:text-center">
-                  アイデアを形に。<br />
+                  アイデアを形に。
+                  <br />
                   新しい価値を届けます。
                 </span>
               </h1>
             </div>
             <div className="flex flex-1 justify-end">
-              <div className="relative
-                w-[clamp(300px,10vw,300px)]
-                h-[clamp(300px,60vw,300px)]
-                rounded-full">
+              <div className="relative h-[clamp(300px,60vw,300px)] w-[clamp(300px,10vw,300px)] rounded-full">
                 <Image
                   src="/images/FacewithMonocle.png"
                   alt="トップイメージ"
@@ -53,36 +50,35 @@ export default function Page() {
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </section>
       {/*  */}
       {/* ------- 活動方針 ------------------------------------------------------------------------------------------- */}
       {/*  */}
-      <section className="flex flex-col max-w-7xl mx-auto justify-start items-center lg:items-start  bg-white p-8 mb-10">
-        <div className="relative flex justify-start items-start">
+      <section className="mx-auto mb-10 flex max-w-7xl flex-col items-center justify-start bg-white p-8 lg:items-start">
+        <div className="relative flex items-start justify-start">
           <DrowCirecle2
-            strokeWidth="9" 
-            className="text-green animate-line-write w-[clamp(200px,32vw,350px)]"
+            strokeWidth="9"
+            className="w-[clamp(200px,32vw,350px)] animate-line-write text-green"
           />
-          <h1 className="absolute inset-0 flex items-center justify-center font-bold leading-relaxed text-[clamp(2.0rem,5vw,3.0rem)]">
-            <span className="text-center">
-              活動方針
-            </span>
+          <h1 className="absolute inset-0 flex items-center justify-center text-[clamp(2.0rem,5vw,3.0rem)] font-bold leading-relaxed">
+            <span className="text-center">活動方針</span>
           </h1>
         </div>
-        <div className="flex w-full flex-row mx-auto text-2xl font-bold text-[#252525] gap-x-14 items-center py-10">
-          <div className="w-full justify-center hidden lg:flex lg:w-1/2">
+        <div className="mx-auto flex w-full flex-row items-center gap-x-14 py-10 text-2xl font-bold text-[#252525]">
+          <div className="hidden w-full justify-center lg:flex lg:w-1/2">
             <Image
               className="mb-8"
-              src="/images/iputapp-mascot-ipad.png" 
-              alt="Picture of the author" 
-              width={320} 
-              height={300} 
+              src="/images/iputapp-mascot-ipad.png"
+              alt="Picture of the author"
+              width={320}
+              height={300}
             />
           </div>
-          <div className="w-full leading-normal text-[clamp(2.0rem,5vw,3.0rem)]">
+          <div className="w-full text-[clamp(2.0rem,5vw,3.0rem)] leading-normal">
             <p className="mb-8 font-bold">
-              みんなのクリエイティブで<br/>
+              みんなのクリエイティブで
+              <br />
               アプリを創る。
             </p>
             <p className="mb-8 text-[0.5em]">
@@ -98,12 +94,13 @@ export default function Page() {
       {/* ------- プロジェクト紹介 ------------------------------------------------------------------------------------------- */}
       {/*  */}
       <section className="flex flex-col bg-[#FFD59A] py-20">
-        <div className="flex flex-col max-w-7xl mx-auto w-full px-8">
-          <p className="mb-[5%] text-[clamp(2rem,6vw,3.5rem)] leading-normal font-bold text-left">
-            私たちのプロジェクト<br/>
+        <div className="mx-auto flex w-full max-w-7xl flex-col px-8">
+          <p className="mb-[5%] text-left text-[clamp(2rem,6vw,3.5rem)] font-bold leading-normal">
+            私たちのプロジェクト
+            <br />
             をご紹介します！
           </p>
-          <div className="flex flex-col gap-y-10 justify-center w-full">
+          <div className="flex w-full flex-col justify-center gap-y-10">
             <CardProject
               label="Available Now!"
               href="https://lounas.jp"
@@ -117,88 +114,83 @@ export default function Page() {
               title="めもっと"
               description="日々のついで出費をもっと自分にとって価値のあるものに使うための習慣アプリ"
               imageSrc="/images/memot.png"
-              gradient='radial-gradient(67.47% 67.47% at 50% 50%, #22C24A 0%, #22C24A 55%, #14A819 100%)'
+              gradient="radial-gradient(67.47% 67.47% at 50% 50%, #22C24A 0%, #22C24A 55%, #14A819 100%)"
             />
           </div>
-          <p className="mt-10 md:mt-20 mb-[5%] text-[clamp(2rem,6vw,3.5rem)] font-bold">
+          <p className="mb-[5%] mt-10 text-[clamp(2rem,6vw,3.5rem)] font-bold md:mt-20">
             他にもいろいろ。
           </p>
-          <div
-            className="
-              relative left-1/2 w-screen -translate-x-1/2 h-full                 
-              flex flex-nowrap pb-4
-            "
-          >
-          <Carousel
-            items={[
-              <CardOtherProject
-                key="firest"
-                card={{
-                  headline: '2年生\nプロジェクト。',
-                  textColor: "black",
-                  bgImage: "/images/card/first.png"
-                }}
-              />,
-              <CardOtherProject
-                key="tuide"
-                card={{
-                  headline: '初めて作った\nアプリ。',
-                  textColor: "white",
-                  bgImage: "/images/card/tuidebank.png"
-                }}
-              />,
-              <CardOtherProject
-                key="zenn"
-                card={{
-                  headline: '技術記事を書いて\nアウトプット。',
-                  textColor: "black",
-                  bgImage: "/images/card/zenncard.png"
-                }}
-              />,
-              <CardOtherProject
-                key="kyoto"
-                card={{
-                  headline: '作ったアプリを\n学会で発表。',
-                  textColor: "white",
-                  bgImage: "/images/card/kyotocard.png"
-                }}
-              />,
-              <CardOtherProject
-                key="dev1"
-                card={{
-                  headline: 'みんなで知見を\n共有。',
-                  textColor: "white",
-                  bgImage: "/images/card/devcard.png"
-                }}
-              />,
-            ]}
-          />
+          <div className="relative left-1/2 flex h-full w-screen -translate-x-1/2 flex-nowrap pb-4">
+            <Carousel
+              items={[
+                <CardOtherProject
+                  key="firest"
+                  card={{
+                    headline: "2年生\nプロジェクト。",
+                    textColor: "black",
+                    bgImage: "/images/card/first.png",
+                  }}
+                />,
+                <CardOtherProject
+                  key="tuide"
+                  card={{
+                    headline: "初めて作った\nアプリ。",
+                    textColor: "white",
+                    bgImage: "/images/card/tuidebank.png",
+                  }}
+                />,
+                <CardOtherProject
+                  key="zenn"
+                  card={{
+                    headline: "技術記事を書いて\nアウトプット。",
+                    textColor: "black",
+                    bgImage: "/images/card/zenncard.png",
+                  }}
+                />,
+                <CardOtherProject
+                  key="kyoto"
+                  card={{
+                    headline: "作ったアプリを\n学会で発表。",
+                    textColor: "white",
+                    bgImage: "/images/card/kyotocard.png",
+                  }}
+                />,
+                <CardOtherProject
+                  key="dev1"
+                  card={{
+                    headline: "みんなで知見を\n共有。",
+                    textColor: "white",
+                    bgImage: "/images/card/devcard.png",
+                  }}
+                />,
+              ]}
+            />
           </div>
         </div>
       </section>
       {/*  */}
       {/* ------- 言葉 ------------------------------------------------------------------------------------------- */}
       {/*  */}
-      <section className="flex flex-col max-w-7xl mx-auto py-20 md:bg-white px-8">
-        <div className="flex flex-col lg:flex-row justify-around items-start md:items-center w-full h-auto bg-gray-100 rounded-3xl p-8">
-          <h2 className="text-2xl sm:text-4xl xl:text-5xl font-extrabold text-black mb-10 lg:mb-0 ">
-            <div className="relative flex flex-row items-end justify-start md:justify-center gap-x-2 md:mb-3">
-              <DrawLine className="text-green w-[200px] sm:w-[300px] xl:w-[400px] h-full" />
-              <h1 className="absolute inset-0 flex pl-5 md:pl-24 xl:pl-28 items-center justify-start font-bold ">
+      <section className="mx-auto flex max-w-7xl flex-col px-8 py-20 md:bg-white">
+        <div className="flex h-auto w-full flex-col items-start justify-around rounded-3xl bg-gray-100 p-8 md:items-center lg:flex-row">
+          <h2 className="mb-10 text-2xl font-extrabold text-black sm:text-4xl lg:mb-0 xl:text-5xl">
+            <div className="relative flex flex-row items-end justify-start gap-x-2 md:mb-3 md:justify-center">
+              <DrawLine className="h-full w-[200px] text-green sm:w-[300px] xl:w-[400px]" />
+              <h1 className="absolute inset-0 flex items-center justify-start pl-5 font-bold md:pl-24 xl:pl-28">
                 <span className="relative whitespace-nowrap text-white">
                   “やってみたい”
                 </span>
               </h1>
               <h1 className="font-bold text-black">を</h1>
             </div>
-            <span className="block md:hidden leading-normal">
-              最初の一歩から<br/>応援します。
+            <span className="block leading-normal md:hidden">
+              最初の一歩から
+              <br />
+              応援します。
             </span>
-            <span className="hidden md:block">
-              最初の一歩から応援します。
-            </span>
+            <span className="hidden md:block">最初の一歩から応援します。</span>
           </h2>
-          <div className="text-base sm:text-2xl text-start font-bold text-[#252525] lg:py-8">
+          <div className="text-start text-base font-bold text-[#252525] sm:text-2xl lg:py-8">
             <p className="mb-8">
               未来なんて、
               <br />
@@ -236,12 +228,15 @@ export default function Page() {
       {/*  */}
       {/* ------- JOIN US ------------------------------------------------------------------------------------------- */}
       {/*  */}
-      <section className="bg-white max-w-7xl mx-auto py-20">
+      <section className="mx-auto max-w-7xl bg-white py-20">
         <div className="flex h-full w-full flex-col items-center gap-y-10">
-          <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold pl-3">
+          <h1 className="pl-3 text-[clamp(2rem,6vw,3.5rem)] font-bold">
             まずはお話しましょう！
           </h1>
-          <Link href="/apply" className="w-[clamp(300px,40vw,500px)] place-content-center place-items-center">
+          <Link
+            href="/apply"
+            className="w-[clamp(300px,40vw,500px)] place-content-center place-items-center"
+          >
             <svg
               viewBox="0 0 546 276"
               fill="none"
@@ -265,6 +260,3 @@ export default function Page() {
     </div>
   );
 }
-
-
-

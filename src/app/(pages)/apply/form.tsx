@@ -111,9 +111,7 @@ export function Form({ token }: { token: string }) {
           </small>
         </section> */}
         <section className="grid gap-1">
-          <label htmlFor="studentId">
-            学籍番号
-          </label>
+          <label htmlFor="studentId">学籍番号</label>
           <input
             className="rounded-lg p-1"
             type="text"
@@ -142,7 +140,9 @@ export function Form({ token }: { token: string }) {
           </small>
         </section>
         <section className="grid gap-1">
-          <label htmlFor="contactDetail">メールアドレスやユーザー名など：</label>
+          <label htmlFor="contactDetail">
+            メールアドレスやユーザー名など：
+          </label>
           <input
             className="rounded-lg p-1"
             type="text"

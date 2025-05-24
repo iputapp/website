@@ -1,10 +1,10 @@
 // src/app/(pages)/privacy/page.tsx
-import { Metadata } from "next"
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー | YourSite",
   description: "当サイトのプライバシーポリシーです。",
-}
+};
 
 const SECTIONS = [
   {
@@ -28,7 +28,7 @@ IP アドレス・閲覧履歴などは匿名化された形で解析されま�
     title: "5. お問い合わせ",
     body: `本ポリシーに関するお問い合わせは、下記窓口までお願いいたします。\ncontact@iputapp.com`,
   },
-]
+];
 
 export default function PrivacyPage() {
   return (
@@ -56,5 +56,5 @@ export default function PrivacyPage() {
       ))}
       <p className="text-right text-sm text-gray-500">最終更新：2025-05-24</p>
     </main>
-  )
+  );
 }

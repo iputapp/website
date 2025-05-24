@@ -10,7 +10,7 @@ export default async function Page() {
   const token = TokenManager.generate();
 
   return (
-    <main className="grid place-content-center w-full p-8 py-16 bg-white">
+    <main className="grid w-full place-content-center bg-white p-8 py-16">
       <Form token={token} />
     </main>
   );
