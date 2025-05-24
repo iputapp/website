@@ -8,6 +8,13 @@ const __dirname = dirname(__filename);
 
 const config: NextConfig = {
   /** @see {@link https://nextjs.org/docs/app/building-your-application/styling/sass} */
+  webpack(config) {
+    config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    })
+    return config
+  },
   sassOptions: {
     implementation: "sass-embedded",
     includePaths: [join(__dirname, "src/styles")],

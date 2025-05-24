@@ -1,11 +1,3 @@
-// src/app/(pages)/privacy/page.tsx
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "プライバシーポリシー | YourSite",
-  description: "当サイトのプライバシーポリシーです。",
-};
-
 const SECTIONS = [
   {
     title: "1. 収集する情報",
