@@ -105,21 +105,23 @@ export default function Page() {
           </p>
           <div className="flex flex-col gap-y-10 justify-center w-full">
             <CardProject
-              label="サービス"
+              label="Available Now!"
+              href="https://lounas.jp"
               title="lounas"
               description="コクーンタワーの学生のためのランチ推薦サービス"
               imageSrc="/images/lounas-ui.png"
             />
             <CardProject
-              label="サービス"
-              title="ついで口座"
+              label="In progress"
+              href="https://lp.memot.app"
+              title="めもっと"
               description="日々のついで出費をもっと自分にとって価値のあるものに使うための習慣アプリ"
-              imageSrc="/images/tuidebank-ui.png"
-              gradient='radial-gradient(67.47% 67.47% at 50% 50%, #FF8000 0%, #FF8000 55%, #E07000 100%)'
+              imageSrc="/images/memot.png"
+              gradient='radial-gradient(67.47% 67.47% at 50% 50%, #22C24A 0%, #22C24A 55%, #14A819 100%)'
             />
           </div>
           <p className="mt-10 md:mt-20 mb-[5%] text-[clamp(2rem,6vw,3.5rem)] font-bold">
-            こんなことも。
+            他にもいろいろ。
           </p>
           <div
             className="
@@ -129,6 +131,22 @@ export default function Page() {
           >
           <Carousel
             items={[
+              <CardOtherProject
+                key="firest"
+                card={{
+                  headline: '2年生\nプロジェクト。',
+                  textColor: "black",
+                  bgImage: "/images/card/first.png"
+                }}
+              />,
+              <CardOtherProject
+                key="tuide"
+                card={{
+                  headline: '初めて作った\nアプリ。',
+                  textColor: "white",
+                  bgImage: "/images/card/tuidebank.png"
+                }}
+              />,
               <CardOtherProject
                 key="zenn"
                 card={{
@@ -153,14 +171,6 @@ export default function Page() {
                   bgImage: "/images/card/devcard.png"
                 }}
               />,
-              <CardOtherProject
-                key="dev2"
-                card={{
-                  headline: 'みんなで知見を\n共有。',
-                  textColor: "white",
-                  bgImage: "/images/card/devcard.png"
-                }}
-              />
             ]}
           />
           </div>

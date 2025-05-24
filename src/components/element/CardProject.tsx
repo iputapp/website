@@ -23,6 +23,7 @@ export default function CardProject({
   return (
     <Link
       href={href}
+      target="_blank"
       className="
         isolate flex w-full flex-col overflow-hidden
         justify-center items-start md:items-center

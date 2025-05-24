@@ -50,9 +50,9 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         ref={carouselRef}
         onScroll={checkScrollability}
       >
-        <div className="flex flex-row justify-start gap-4 pl-8 pr-8 mx-auto max-w-7xl">
+        <div className="flex flex-row justify-start gap-4 pl-8 pr-10 mx-auto max-w-7xl">
           {items.map((item, index) => (
-            <div key={"card" + index}>
+            <div key={"card" + index} className={index === items.length - 1 ? "pr-10" : ""}>
               {item}
             </div>
           ))}
