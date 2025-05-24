@@ -5,7 +5,7 @@ import { useLayoutEffect } from "react";
 import { useForm } from "react-hook-form";
 import useSWRMutation from "swr/mutation";
 
-import { CONTACT_TOOL_JA, OCCUPATIONAL_STATUS_JA } from "@/constants";
+import { CONTACT_TOOL_JA } from "@/constants";
 import { type Newcomer, NewcomerSchema } from "@/models";
 import type { APIResponse } from "@/types";
 
@@ -82,18 +82,18 @@ export function Form({ token }: { token: string }) {
         <input type="hidden" readOnly {...register("csrfToken")} />
         {/* 申請フォーム */}
         <section className="grid gap-1">
-          <label htmlFor="name">お名前</label>
+          <label htmlFor="name">お名前：</label>
           <input
             className="rounded-lg p-1"
             type="text"
             id="name"
             {...register("name")}
           />
-          <small className="text-red-600">
+          <small className="text-red">
             {errors.name && errors.name.message}
           </small>
         </section>
-        <section className="grid gap-1">
+        {/* <section className="grid gap-1">
           <label htmlFor="occupationalStatus">ご職業</label>
           <select
             className="rounded-lg p-1"
@@ -109,10 +109,10 @@ export function Form({ token }: { token: string }) {
           <small className="text-red-600">
             {errors.occupationalStatus && errors.occupationalStatus.message}
           </small>
-        </section>
+        </section> */}
         <section className="grid gap-1">
           <label htmlFor="studentId">
-            学籍番号（コクーンタワーの学生は必須です）
+            学籍番号
           </label>
           <input
             className="rounded-lg p-1"
@@ -120,12 +120,12 @@ export function Form({ token }: { token: string }) {
             id="studentId"
             {...register("studentId")}
           />
-          <small className="text-red-600">
+          <small className="text-red">
             {errors.studentId && errors.studentId.message}
           </small>
         </section>
         <section className="flex items-center gap-3">
-          <label htmlFor="contactTool">連絡ツール</label>
+          <label htmlFor="contactTool">ご連絡方法：</label>
           <select
             className="rounded-lg p-1"
             id="contactTool"
@@ -137,28 +137,28 @@ export function Form({ token }: { token: string }) {
               </option>
             ))}
           </select>
-          <small className="text-red-600">
+          <small className="text-red">
             {errors.contactTool && errors.contactTool.message}
           </small>
         </section>
         <section className="grid gap-1">
-          <label htmlFor="contactDetail">メールアドレスやユーザー名など</label>
+          <label htmlFor="contactDetail">メールアドレスやユーザー名など：</label>
           <input
             className="rounded-lg p-1"
             type="text"
             id="contactDetail"
             {...register("contactDetail")}
           />
-          <small className="text-red-600">
+          <small className="text-red">
             {errors.contactDetail && errors.contactDetail.message}
           </small>
         </section>
         <section className="my-4 text-center">
           <button
-            className="rounded-lg bg-blue-600 px-3 py-2 text-white"
+            className="rounded-full bg-blue px-6 py-3 text-base font-semibold text-white"
             type="submit"
           >
-            入会を申請する
+            加入を申請する
           </button>
         </section>
       </form>
