@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import DrowCirecle from "@/assets/icons/draw-circle.svg";
 import DrowCirecle2 from "@/assets/icons/draw-circle-2.svg";
@@ -230,7 +231,7 @@ export default function Page() {
           <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold pl-3">
             まずはお話しましょう！
           </h1>
-          <div className="w-[clamp(300px,32vw,500px)] place-content-center place-items-center">
+          <Link href="/apply" className="w-[clamp(300px,40vw,500px)] place-content-center place-items-center">
             <svg
               viewBox="0 0 546 276"
               fill="none"
@@ -248,7 +249,7 @@ export default function Page() {
                 fill="white"
               />
             </svg>
-          </div>
+          </Link>
         </div>
       </section>
     </div>

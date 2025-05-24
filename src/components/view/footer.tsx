@@ -15,10 +15,10 @@ export default function Footer() {
             </Link>
             <ul className="flex flex-wrap items-center text-base lg:text-2xl font-bold text-white">
               <li>
-                <Link href="#" className="hover:underline hover:decoration-red  me-4 md:me-6">プライバシーポリシー</Link>
+                <Link href="/privacy" className="hover:underline hover:decoration-red  me-4 md:me-6">プライバシーポリシー</Link>
               </li>
               <li>
-                <Link href="/apply" className="hover:underline hover:decoration-red me-4 md:me-6">参加申請</Link>
+                <Link href="/apply" className="hover:underline hover:decoration-red me-4 md:me-6">加入申請</Link>
               </li>
             </ul>
           </div>
