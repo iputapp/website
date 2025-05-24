@@ -7,7 +7,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className="rounded-full bg-blue px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue active:bg-blue"
+      className="rounded-full bg-blue px-6 py-3 text-sm font-semibold text-white "
     >
       {text}
     </Link>

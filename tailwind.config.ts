@@ -13,6 +13,7 @@ const config: Config = {
       },
       animation: {
         "line-write": "lineAnimation 1s linear 1",
+        "line-write2": "lineAnimation 2s cubic-bezier(0.65,0,0.35,1) 1",
       },
       keyframes: {
         lineAnimation: {

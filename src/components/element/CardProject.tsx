@@ -25,7 +25,7 @@ export default function CardProject({
       href={href}
       className="
         isolate flex w-full flex-col overflow-hidden
-        justify-center items-center
+        justify-center items-start md:items-center
         rounded-[2.5rem] p-10 transition ease-in-out duration-500
         md:flex-row
         hover:scale-105

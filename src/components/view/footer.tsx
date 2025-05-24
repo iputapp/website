@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="w-full max-w-screen-xl mx-auto md:p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <Link href="/" className="flex items-cente space-x-3 rtl:space-x-reverse mb-5">
-              <IputappLogo className="w-80 h-auto"/>
+              <IputappLogo className="w-60 md:w-80 h-auto"/>
             </Link>
             <ul className="flex flex-wrap items-center text-base lg:text-2xl font-bold text-white">
               <li>
