@@ -10,8 +10,7 @@ export default async function Page() {
   const token = TokenManager.generate();
 
   return (
-    <main className="grid min-h-dvh w-full place-content-center gap-8">
-      <h1 className="text-center text-2xl">入会申請</h1>
+    <main className="grid min-h-dvh w-full place-content-center gap-8 bg-white">
       <Form token={token} />
     </main>
   );

@@ -187,7 +187,7 @@ export default function Page() {
               最初の一歩から応援します。
             </span>
           </h2>
-          <div className="text-base sm:text-2xl text-start font-bold text-[#252525] py-">
+          <div className="text-base sm:text-2xl text-start font-bold text-[#252525] lg:py-8">
             <p className="mb-8">
               未来なんて、
               <br />
