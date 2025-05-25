@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 
 import LeftIcon from "@/assets/icons/left.svg";
 import RightIcon from "@/assets/icons/right.svg";
@@ -14,20 +14,20 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = initialScroll;
-      checkScrollability();
-    }
-  }, [initialScroll]);
-
-  const checkScrollability = () => {
+  const checkScrollability = useCallback(() => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = initialScroll;
+      checkScrollability();
+    }
+  }, [initialScroll, checkScrollability]);
 
   const scrollLeft = () => {
     if (carouselRef.current) {
